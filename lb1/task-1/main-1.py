@@ -45,21 +45,15 @@ def displayImages(images, titles, window_title=None):
 
 def displayImagesDict(images, cols=1, window_title=None):
 	rows = math.ceil(len(images) / cols)
-	fig, axes = plt.subplots(rows, cols, figsize=(cols*2, rows*2))
-	if rows == 1: axes = np.array([axes])
-	if cols == 1: axes = np.array([[item] for item in axes])
-
-	i, j = 0, 0
-	for caption, img in images.items():
-		axes[i, j].axis('off')
-		axes[i, j].imshow(img)
-		axes[i, j].set_title(caption)
-		j+=1
-		if j == cols:
-			j = 0
-			i+=1
+	
+	for index, [caption, img] in enumerate(images.items()):
+		plt.subplot(rows, cols, index+1)
+		plt.imshow(img)
+		plt.axis('off')
+		plt.title(caption)
 
 	if window_title:
+		fig = plt.gcf()
 		fig.canvas.manager.set_window_title(window_title)
 	plt.tight_layout()
 	plt.show()
