@@ -12,7 +12,7 @@ img1 = cv2.imread('medic-1.png', cv2.IMREAD_GRAYSCALE)
 img_ns = random_noise(img1, mode='speckle', mean=0.1)
 
 img_m3 = median(img_ns, disk(3))
-img_m9= median(img_ns, disk(9))
+img_m9 = median(img_ns, disk(9))
 
 img_g1 = gaussian(img_ns, 1)
 img_g3 = gaussian(img_ns, 3)
