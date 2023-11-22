@@ -76,8 +76,10 @@ class TextureSelector:
 
 selector = TextureSelector("1.jpg")
 # selector.img = data.camera()
+
 selector.selections = [(279, 543, 75, 64), (97, 415, 36, 40), (174, 195, 30, 27), (563, 320, 28, 24), (406, 655, 41, 34), (620, 250, 43, 40)]
 # selector.selections = [(142, 283, 30, 29), (79, 447, 38, 33), (309, 309, 58, 46), (479, 419, 55, 45), (96, 239, 35, 32), (188, 85, 35, 41)]
+# selector.selections = [(295, 19, 49, 39), (12, 0, 41, 37), (24, 600, 31, 29), (308, 342, 37, 37), (469, 453, 38, 34), (216, 274, 40, 35)]
 
 selecting = True
 while selecting:
