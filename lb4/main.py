@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import cv2 as cv
 from scipy.signal import convolve2d
 
@@ -58,7 +57,7 @@ def lucas_kanade(imfirst, imsecond):
 
 	for i, (new, old) in enumerate(zip(good_new, good_old)):
 		a,b = new.ravel()
-		c,d=old.ravel()
+		c,d = old.ravel()
 		a,b,c,d = map(int, [a,b,c,d])
 		mask = cv.line(mask, (a,b),(c,d), color[i].tolist(), 2)
 		imsecond = cv.circle(imsecond, (a,b), 5, color[i].tolist(), -1)
@@ -77,7 +76,7 @@ while cap.isOpened():
 	if len(old_frame) > 0:
 		image = lucas_kanade(old_frame, img)
 		cv.imshow('frame',image)
-		k = cv.waitKey(30)
+		k = cv.waitKey(10)
 		if k == 27:
 			break
 
